@@ -1,28 +1,28 @@
-# 🎵 Laser Harp - Parametric Laser Mount
+# Parametric Laser Mount
 
 ![CAD](https://img.shields.io/badge/CAD-Onshape-blue?logo=onshape)
-![Hardware](https://img.shields.io/badge/Hardware-Laser_Harp-orange)
+![Hardware](https://img.shields.io/badge/Hardware-3D_Printing-orange)
 
-A 1:1 wooden harp model designed to work as a laser-based interactive instrument. 
-This repository contains the parametric CAD design of the laser mounting system used to position and adjust the laser modules.
+This repository contains the parametric CAD design for a specialized 3D-printable laser mounting block. It is specifically designed to be manufactured using TPU (Thermoplastic Polyurethane), allowing for friction-based alignment without the need for complex mechanical fasteners.
 
-## 🌟 Project Overview
-The physical harp is a non-playable wooden model that replaces traditional strings with laser beams. When a player "plucks" the virtual string, they interrupt the laser beam, triggering an LDR sensor to play a musical note.
+This mount was designed to be utilized as part of a laser harp system, but the CAD principles apply to any project requiring compact, adjustable laser positioning.
 
-The core challenge in this system is precisely mounting and aligning the lasers with the sensors below.
+## Mechanical Design and Adjustability
 
-### The Mechanism
-The laser mount is designed around two friction-based adjustments (eliminating the need for complex screws or hinges):
-1. **Laser adjustment**: The laser module slides into a slot dimensioned for a tight friction fit, allowing it to be aimed by hand.
-2. **Mount adjustment**: The complete mounting block slides between the two walls of the harp's upper curve, holding its position via friction.
+The primary function of this mount is to securely hold a cylindrical laser module while allowing for fine-tuned alignment across two axes. The use of flexible TPU material enables friction-fit kinematics.
 
-## 🛠️ The CAD Model (Onshape)
+### Two-Axis Adjustment System
+1. **X-Axis (Laser Slot)**: The inner slot is dimensioned to grip the laser module firmly. The flexibility of the TPU allows the laser to be manually tilted and translated within the slot along the x-axis.
+2. **Y-Axis (Mount Base)**: The entire mounting block can be shifted along the y-axis where it is mounted. 
 
-The primary parametric CAD model is maintained in Onshape.
-👉 **[Open the Onshape CAD Document](https://cad.onshape.com/documents/89cf6b00cf7b795ae2f5dd3b/w/717d53ea8ababa12619c551d/e/7e3aa22e7690729a05d70ef4?renderMode=0&rightPanel=variableTablePanel&uiState=6aad9599c5c327812b27e8ca)**
+Together, these two friction-based adjustment axes allow the laser beam to be accurately targeted in 3D space.
 
-### Screenshots
-*(Visuals of the Parametric Laser Mount)*
+## The CAD Model (Onshape)
+
+The primary parametric CAD model is maintained natively in Onshape.
+[Open the Onshape CAD Document](https://cad.onshape.com/documents/89cf6b00cf7b795ae2f5dd3b/w/717d53ea8ababa12619c551d/e/7e3aa22e7690729a05d70ef4?renderMode=0&rightPanel=variableTablePanel&uiState=6aad9599c5c327812b27e8ca)
+
+### Visuals
 <p align="center">
   <img src="Images/Screenshot%202026-09-19%20012310.png" width="30%">
   <img src="Images/Screenshot%202026-09-19%20012324.png" width="30%">
@@ -30,7 +30,7 @@ The primary parametric CAD model is maintained in Onshape.
 </p>
 
 ### Parametric Variables
-The model is fully parametric. If a different laser module or harp dimension is used, you only need to change these variables in Onshape and the geometry will update automatically:
+The model is fully parametric. If a different laser module diameter is required, simply update the variables in the Onshape document and the geometry will rebuild automatically:
 
 | Variable | Value | Description |
 |---|---|---|
@@ -43,29 +43,19 @@ The model is fully parametric. If a different laser module or harp dimension is 
 | `Ears_Width` | 2 mm | Width/thickness of the mounting ears |
 | `Ears_Height` | 6 mm | Height of the mounting ears |
 
-## 🚀 Current Status & Next Steps
+## Repository Structure
 
-**Completed:**
-- [x] 1:1 wooden harp model constructed.
-- [x] Parametric friction-fit laser mounting designed in Onshape.
-- [x] Adjustable positioning mechanics finalized.
-
-**Next Steps:**
-- [ ] Install the laser modules and LDR sensors.
-- [ ] Align individual laser beams with the sensors.
-- [ ] Integrate the electronics (Arduino/Microcontroller).
-- [ ] Map laser interruptions to MIDI musical notes.
-
-## 📂 Repository Structure
-
-While Onshape holds the parametric *master* file (including feature history), this GitHub repository is used to store the exported portable files and documentation.
+While Onshape holds the parametric master file (including feature history), this GitHub repository is used to store the exported portable files and documentation.
 
 ```text
 Laser-Harp-Mount/
 ├── README.md
-├── CAD/ (Recommended for .step, .stl, .x_t exports)
+├── CAD/ 
+│   └── Laser_Mount.step
 └── Images/
 ```
 
-### Fit and Manufacturing Notes
-Before 3D printing or machining the mount, verify the actual laser module diameter and harp wall thickness. Depending on your material and printer tolerances, small dimensional adjustments to the variables may be required to achieve the perfect friction fit.
+## Manufacturing Notes
+
+This part is specifically engineered for **3D printing with TPU filament**. 
+Before printing the mount, verify the actual laser module diameter and your printer's tolerances. The flexibility of the TPU is critical for the friction-fit mechanism to function correctly; printing this in rigid materials like PLA or PETG may result in the laser not fitting or the adjustment axes being locked.
